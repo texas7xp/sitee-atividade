@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança Cibernética: Senhas Fortes e Autenticação de 2 Fatores</title>
+    <style>
+        /* Resetando margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffb703;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ffb703;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffb703;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 18px;
+            color: #ffb703;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+
+        .password-check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .password-check input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .password-check button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .password-check button:hover {
+            background-color: #ffb703;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#seguranca">O que é Segurança de Dados</a></li>
+                <li><a href="#boas-praticas">Boas Práticas</a></li>
+                <li><a href="#golpes">Golpes Digitais</a></li>
+                <li><a href="#2fa">Senhas Fortes & 2FA</a></li>
+                <li><a href="#links">Links Úteis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Página inicial -->
+        <section id="home">
+            <h1>Segurança Cibernética: Senhas Fortes e Autenticação de 2 Fatores</h1>
+            <p>Este site tem como objetivo educar sobre as melhores práticas de segurança cibernética, com foco em senhas fortes e autenticação de dois fatores (2FA).</p>
+            <p>Aprenda a proteger seus dados e evite ameaças digitais!</p>
+        </section>
+
+        <!-- O que é Segurança de Dados -->
+        <section id="seguranca">
+            <h2>O que é Segurança de Dados?</h2>
+            <p>A Segurança de Dados é o conjunto de práticas, políticas, e tecnologias destinadas a proteger os dados contra acessos não autorizados, vazamentos, perdas, danos ou corrupção. Ela envolve garantir a confidencialidade, integridade e disponibilidade das informações, especialmente quando estão sendo armazenadas, processadas ou transmitidas. 
+                <br>
+                <br>
+                Essencialmente, segurança de dados busca evitar que informações sensíveis sejam acessadas ou manipuladas por pessoas ou sistemas não autorizados, além de assegurar que os dados não sejam alterados ou perdidos de maneira acidental.</p>
+            <img style="width: 600px;height: 300px;" src="https://img.freepik.com/fotos-premium/seguranca-cibernetica-protecao-de-dados-tecnologia-empresarial-conceito-de-privacidade_628331-247.jpg?semt=ais_hybrid&w=740" alt="Segurança de Dados">
+        </section>
+
+        <!-- Boas Práticas -->
+        <section id="boas-praticas">
+            <h2>Boas Práticas de Segurança</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h4>Senhas Fortes</h4>
+                    <p>Use senhas longas e complexas para dificultar ataques. Evite combinações simples como "123456" ou "senha123".</p>
+                    <a href="#" class="cta-button">Saiba mais</a>
+                </div>
+                <div class="card">
+                    <h4>Antivírus</h4>
+                    <p>Mantenha um antivírus atualizado para proteger seu computador contra malwares e vírus.</p>
+                    <a href="#" class="cta-button">Baixar</a>
+                </div>
+                <div class="card">
+                    <h4>Backups</h4>
+                    <p>Faça backups regulares de seus dados para evitar perda em caso de ataques ou falhas no sistema.</p>
+                    <a href="#" class="cta-button">Aprenda como</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teste de Força de Senha -->
+        <section id="password-test">
+            <h2>Teste sua Senha</h2>
+            <p>Verifique se sua senha é forte o suficiente para evitar ataques de força bruta.</p>
+            <div class="password-check">
+                <input type="text" id="password-input" placeholder="Digite sua senha">
+                <button onclick="checkPasswordStrength()">Verificar</button>
+            </div>
+            <p id="password-strength"></p>
+        </section>
+
+        <!-- Como Identificar Golpes Digitais -->
+        <section id="golpes">
+            <h2>Como Identificar Golpes Digitais</h2>
+            <p>Golpes digitais são fraudes online que buscam enganar as pessoas para roubar informações pessoais ou dinheiro. Aqui estão os principais sinais para identificá-los:
+                <br>
+               1. Mensagens suspeitas: Desconfie de e-mails, SMS ou mensagens de fontes desconhecidas com erros gramaticais, promessas de prêmios ou ofertas irresistíveis.
+                <br>
+               2. Links e anexos estranhos: Não clique em links suspeitos e evite abrir anexos de remetentes desconhecidos.
+                <br>
+               3. Pedidos de informações sensíveis: Empresas legítimas nunca pedem dados como senhas ou números bancários por e-mail ou mensagem.
+                <br>
+               4. Ofertas falsas de emprego ou investimento: Golpes de emprego ou investimentos que prometem retornos rápidos e altos são frequentemente fraudulentos.
+                <br>
+               5. Phishing e spoofing: Golpistas se passam por entidades confiáveis, como bancos, para roubar dados.
+                <br>
+               6. Golpes por telefone: Desconfie de chamadas que pedem informações pessoais ou pagamentos urgentes.
+                <br>
+               7. Métodos de pagamento incomuns: Pagamentos por criptomoedas ou cartões pré-pagos são comuns em fraudes.
+                <br>
+               8. Sites e aplicativos falsos: Verifique se o site tem "https" e se a URL é correta.
+                <br>
+               9. Redes sociais: Ofertas e sorteios falsos em redes sociais são frequentemente golpes.</p>
+            <img style="width: px; height: 300px;" src="https://www.coopersystem.com.br/wp-content/uploads/2022/03/golpe_pela_internet.jpeg" alt="Golpes Digitais">
+        </section>
+
+        <!-- Senhas Fortes & 2FA -->
